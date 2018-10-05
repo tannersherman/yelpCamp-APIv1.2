@@ -1,11 +1,11 @@
 package com.yelpCamp.entity;
 
 public class Campground {
-    private int id;
+    private double id;
     private String name;
     private String info;
 
-    public Campground(int id, String name, String info) {
+    public Campground(double id, String name, String info) {
         this.id = id;
         this.name = name;
         this.info = info;
@@ -15,11 +15,11 @@ public class Campground {
 
     }
 
-    public int getId() {
+    public double getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(double id) {
         this.id = id;
     }
 

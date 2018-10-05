@@ -1,5 +1,6 @@
 package com.yelpCamp.controller;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.yelpCamp.entity.Campground;
 import com.yelpCamp.service.CampgroundService;
 
@@ -22,12 +26,12 @@ public class CampgroundController {
 	
 	@Autowired
 	@RequestMapping(method = RequestMethod.GET)
-	public Collection<Campground> getAllCampgrounds(){
+	public Collection<DBObject> getAllCampgrounds(){
 		return campgroundService.getAllCampgrounds();
 	}
 	
 	 @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Campground getCampgroundById(@PathVariable("id") int id){
+    public BasicDBObject getCampgroundById(@PathVariable("id") int id){
         return campgroundService.getCampgroundById(id);
     }
 

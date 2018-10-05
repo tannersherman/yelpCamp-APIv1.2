@@ -1,17 +1,21 @@
 package com.yelpCamp.dao;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.yelpCamp.entity.Campground;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 
 
 public interface CampgroundDao {
-    Collection<Campground> getAllCampgrounds();
+	Collection<DBObject> getAllCampgrounds();
 
-    Campground getCampgroundById(int id);
+	BasicDBObject getCampgroundById(double id);
 
-    void deleteCampgroundById(int id);
+    void deleteCampgroundById(double id);
 
     void updateCampground(Campground campground);
 
